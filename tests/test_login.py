@@ -14,3 +14,21 @@ def test_locked_out_user_login(login_page, locked_out_user):
     login_page.open()
     login_page.login(locked_out_user["username"], locked_out_user["password"])
     assert login_page.error_displayed_text("Sorry, this user has been locked out.")
+
+def test_login_username_without_password(login_page, valid_user):
+    login_page.open()
+    login_page.login_without_password(valid_user["username"])
+    assert login_page.is_error_displayed() == True
+    assert login_page.error_displayed_text("Password is required")
+
+def test_login_password_without_username(login_page, valid_user):
+    login_page.open()
+    login_page.login_without_username(valid_user["password"])
+    assert login_page.is_error_displayed() == True
+    assert login_page.error_displayed_text("Username is required")
+
+def test_login_without_data(login_page):
+    login_page.open()
+    login_page.click()
+    assert login_page.is_error_displayed() == True
+    assert login_page.error_displayed_text("Username is required")
