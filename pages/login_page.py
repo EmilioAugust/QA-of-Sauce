@@ -9,6 +9,17 @@ class LoginPage(BasePage):
         self.fill(LoginLocator.USERNAME, username)
         self.fill(LoginLocator.PASSWORD, password)
         self.click(LoginLocator.LOGIN_BTN)
+
+    def login_without_username(self, password):
+        self.fill(LoginLocator.PASSWORD, password)
+        self.click(LoginLocator.LOGIN_BTN)
+
+    def login_without_password(self, username):
+        self.fill(LoginLocator.USERNAME, username)
+        self.click(LoginLocator.LOGIN_BTN)
+
+    def click(self):
+        super().click(LoginLocator.LOGIN_BTN)
     
     def is_error_displayed(self):
         return self.is_visible(LoginLocator.ERROR)
