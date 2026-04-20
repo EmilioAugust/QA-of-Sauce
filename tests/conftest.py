@@ -21,7 +21,6 @@ def login_page(page):
 def inventory_page(page):
     return InventoryPage(page)
 
-
 # JSON file with users
 @pytest.fixture
 def valid_user():
@@ -37,3 +36,9 @@ def invalid_user():
 def locked_out_user():
     with open("data/users.json") as f:
         return json.load(f)["locked_user"]
+    
+# Logged in user
+@pytest.fixture
+def logged_in(login_page, valid_user):
+    login_page.open()
+    login_page.login(valid_user["username"], valid_user["password"])
