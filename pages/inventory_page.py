@@ -1,9 +1,10 @@
 from pages.base_page import BasePage
+from utils.config import INVENTORY_URL, CART_URL
 from locators.inventory_locator import InventoryLocator
 
 class InventoryPage(BasePage):
     def open(self):
-        super().open("inventory.html")
+        super().open(INVENTORY_URL)
 
     def add_to_cart(self):
         self.open()
@@ -19,7 +20,7 @@ class InventoryPage(BasePage):
         self.open()
         for btn in InventoryLocator.ADD_TO_CART_BUTTONS:
             self.click(btn)
-    
+
     def is_all_remove_btn_visible(self):
         for btn in InventoryLocator.REMOVE_BUTTONS:
             return self.is_visible(btn)
