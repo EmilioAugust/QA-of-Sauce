@@ -1,5 +1,5 @@
 class LoginLocator:
-    USERNAME = "#user-name"
-    PASSWORD = "#password"
-    LOGIN_BTN = "#login-button"
-    ERROR = ".error"
+    USERNAME = '[data-test="username"]'
+    PASSWORD = '[data-test="password"]'
+    LOGIN_BTN = '[data-test="login-button"]'
+    ERROR = '[data-test="error"]'
