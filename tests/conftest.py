@@ -3,6 +3,7 @@ import json
 from playwright.sync_api import sync_playwright
 from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
+from pages.cart_page import CartPage
 
 # Pages
 @pytest.fixture
@@ -20,6 +21,10 @@ def login_page(page):
 @pytest.fixture
 def inventory_page(page):
     return InventoryPage(page)
+
+@pytest.fixture
+def cart_page(page):
+    return CartPage(page)
 
 # JSON file with users
 @pytest.fixture
@@ -42,3 +47,10 @@ def locked_out_user():
 def logged_in(login_page, valid_user):
     login_page.open()
     login_page.login(valid_user["username"], valid_user["password"])
+
+# Logged in user with item in cart
+@pytest.fixture
+def logged_in_with_item(login_page, inventory_page, valid_user):
+    login_page.open()
+    login_page.login(valid_user["username"], valid_user["password"])
+    inventory_page.add_to_cart()
