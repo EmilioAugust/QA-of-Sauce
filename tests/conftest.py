@@ -10,7 +10,7 @@ from pages.checkout_page import CheckoutPage
 @pytest.fixture
 def page():
     with sync_playwright() as p:
-        browser = p.chromium.launch(channel="chrome", headless=False)
+        browser = p.chromium.launch(channel="chrome", headless=True)
         page = browser.new_page()
         yield page
         browser.close()
