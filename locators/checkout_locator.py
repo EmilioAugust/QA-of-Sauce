@@ -1,0 +1,10 @@
+class CheckoutLocator:
+    FILL_INFO_CONTAINER = '[data-test="checkout-info-container"]'
+    FIRST_NAME = '[data-test="firstName"]'
+    LAST_NAME = '[data-test="lastName"]'
+    POSTAL_CODE = '[data-test="postalCode"]'
+    CONTINUE_BTN = '[data-test="continue"]'
+    TOTAL_PRICE = '[data-test="total-label"]'
+    FINISH_BTN = '[data-test="finish"]'
+    CHECKOUT_COMPLETE = '[data-test="checkout-complete-container"]'
+    BACK_HOME_BTN = '[data-test="back-to-products"]'
