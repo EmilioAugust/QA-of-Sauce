@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from utils.config import INVENTORY_URL, CART_URL
+from utils.config import INVENTORY_URL
 from locators.inventory_locator import InventoryLocator
 
 class InventoryPage(BasePage):

@@ -1,5 +1,6 @@
 from pages.base_page import BasePage
 from locators.login_locator import LoginLocator
+from locators.locator import Locator
 
 class LoginPage(BasePage):
     def open(self):
@@ -25,10 +26,10 @@ class LoginPage(BasePage):
         super().click(LoginLocator.LOGIN_BTN)
     
     def is_error_displayed(self):
-        return self.is_visible(LoginLocator.ERROR)
+        return self.is_visible(Locator.ERROR)
     
     def error_displayed_text(self, text):
-        return self.is_has_text(LoginLocator.ERROR, text)
+        return self.is_has_text(Locator.ERROR, text)
     
     def is_opened(self):
         return self.is_visible(LoginLocator.LOGIN_BTN)
