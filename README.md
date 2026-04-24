@@ -10,7 +10,7 @@ The goal is to demonstrate a structured QA approach including:
 - Test planning
 - Test design (checklists & test cases)
 - UI automation
-- Reporting and CI integration
+- CI integration
 
 Application under test: https://www.saucedemo.com/
 
@@ -32,7 +32,6 @@ The following features are covered:
 - Python
 - pytest
 - Playwright
-- Allure Report
 - GitHub Actions (CI)
 
 ---
@@ -68,21 +67,6 @@ pip install -r requirements.txt
 ```bash
 pytest
 ```
-
-3. Run with Allure:
-```bash
-pytest --alluredir=reports
-allure serve reports
-```
-
----
-
-## Reporting
-
-Test results are generated using Allure Report and include:
-- Test execution steps
-- Screenshots on failure
-- Detailed logs
 
 ---
 
